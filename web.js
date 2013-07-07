@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 // read file
 var fs = require('fs');
-var data = fs.readFileSync("./index.html");
+var data = fs.readFileSync("./index.html") || "No index.html found";
 
 app.get('/', function(request, response) {
   response.send(data);
